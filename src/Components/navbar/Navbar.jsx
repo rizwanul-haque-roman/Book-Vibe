@@ -43,7 +43,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="container mx-auto work-sans">
+    <div className="container mx-auto work-sans my-12">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -78,8 +78,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <a className="btn bg-[#23BE0A] text-white">Sign in</a>
-          <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
+          <a className="btn bg-[#23BE0A] text-white text-lg">Sign in</a>
+          <a className="btn bg-[#59C6D2] text-white text-lg">Sign Up</a>
         </div>
       </div>
     </div>
