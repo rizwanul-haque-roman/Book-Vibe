@@ -1,11 +1,15 @@
 import { useContext } from "react";
 import { BookContext } from "../../utilities/context";
 import { toast } from "react-toastify";
+import { setData } from "../../utilities/localStorage";
 
 const BookDetails = () => {
-  const handleToast = () => {
-    false
-      ? toast.success("Book added successfully", {
+  const { book } = useContext(BookContext);
+  const handleRead = () => {
+    setData(book, "wishlist");
+    const exist = setData(book, "read");
+    exist === false
+      ? toast.success("Book added to Read successfully", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -15,7 +19,7 @@ const BookDetails = () => {
           progress: undefined,
           theme: "light",
         })
-      : toast.error("Book already added", {
+      : toast.error("Book already Read", {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -26,8 +30,30 @@ const BookDetails = () => {
           theme: "light",
         });
   };
-
-  const { book } = useContext(BookContext);
+  const handleWishlist = () => {
+    const exist = setData(book, "wishlist");
+    exist === false
+      ? toast.success("Book added to wishlist successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      : toast.error("Book already Read", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+  };
   const {
     image,
     name,
@@ -82,14 +108,11 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="work-sans flex gap-4 mt-8">
-          <button
-            onClick={handleToast}
-            className="btn btn-outline px-7 text-lg"
-          >
+          <button onClick={handleRead} className="btn btn-outline px-7 text-lg">
             Read
           </button>
           <button
-            onClick={handleToast}
+            onClick={handleWishlist}
             className="btn px-7 bg-[#50B1C9] hover:bg-[#337181] text-white text-lg"
           >
             Wishlist

@@ -1,5 +1,3 @@
-import { NavLink, Outlet } from "react-router-dom";
-
 const ListedBooks = () => {
   return (
     <div className="container mx-auto">
@@ -11,30 +9,35 @@ const ListedBooks = () => {
           Sort
         </button>
       </div>
-      <div className="border-b-2">
-        <NavLink
-          to="/listed/read"
-          className={({ isActive }) =>
-            isActive
-              ? "border border-l-2 border-t-2 border-r-2 border-b-0 pt-3 pb-[7px] bg-white rounded-t-lg"
-              : ""
-          }
+      <div role="tablist" className="tabs tabs-lifted">
+        <input
+          type="radio"
+          name="my_tabs_2"
+          role="tab"
+          className="tab text-lg work-sans"
+          aria-label="Read Books"
+          checked
+        />
+        <div
+          role="tabpanel"
+          className="tab-content bg-base-100 border-base-300 border-b-0 border-x-0"
         >
-          <button className="px-5 text-lg work-sans">Read Books</button>
-        </NavLink>
-        <NavLink
-          to="/listed/wishlist"
-          className={({ isActive }) =>
-            isActive
-              ? "border border-l-2 border-t-2 border-r-2 border-b-0 pt-3 pb-[7px] bg-white rounded-t-lg"
-              : ""
-          }
+          Tab content 1
+        </div>
+
+        <input
+          type="radio"
+          name="my_tabs_2"
+          role="tab"
+          className="tab text-lg work-sans"
+          aria-label="Wishlisted Books"
+        />
+        <div
+          role="tabpanel"
+          className="tab-content bg-base-100 border-base-300 border-b-0 border-x-0"
         >
-          <button className="px-5 text-lg work-sans">Wish List</button>
-        </NavLink>
-      </div>
-      <div>
-        <Outlet />
+          Tab content 2
+        </div>
       </div>
     </div>
   );
