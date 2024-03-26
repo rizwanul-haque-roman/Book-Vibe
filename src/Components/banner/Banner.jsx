@@ -3,7 +3,7 @@ import book from "../../assets/book.png";
 
 const Banner = () => {
   return (
-    <div className="hero bg-[#22be0a4e] playfair rounded-2xl p-16">
+    <div className="hero bg-slate-200 playfair rounded-2xl p-16">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={book} />
         <div>

@@ -43,7 +43,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="container mx-auto work-sans my-12">
+    <div className="container mx-auto work-sans my-6">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
