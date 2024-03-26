@@ -1,7 +1,32 @@
 import { useContext } from "react";
 import { BookContext } from "../../utilities/context";
+import { toast } from "react-toastify";
 
 const BookDetails = () => {
+  const handleToast = () => {
+    false
+      ? toast.success("Book added successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      : toast.error("Book already added", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+  };
+
   const { book } = useContext(BookContext);
   const {
     image,
@@ -57,8 +82,16 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="work-sans flex gap-4 mt-8">
-          <button className="btn btn-outline px-7 text-lg">Read</button>
-          <button className="btn px-7 bg-[#50B1C9] hover:bg-[#337181] text-white text-lg">
+          <button
+            onClick={handleToast}
+            className="btn btn-outline px-7 text-lg"
+          >
+            Read
+          </button>
+          <button
+            onClick={handleToast}
+            className="btn px-7 bg-[#50B1C9] hover:bg-[#337181] text-white text-lg"
+          >
             Wishlist
           </button>
         </div>
