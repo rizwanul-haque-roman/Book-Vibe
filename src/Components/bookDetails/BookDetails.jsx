@@ -86,10 +86,10 @@ const BookDetails = () => {
         </p>
         <div className="flex gap-6 work-sans items-center">
           <p className="font-bold">Tags</p>
-          <p className="py-2 px-4 bg-[#23BE0A29] rounded-lg text-[#23BE0A]">
+          <p className="py-2 px-4 bg-[#23BE0A0D] rounded-lg text-[#23BE0A]">
             #{tags[0]}
           </p>
-          <p className="p-2 px-4 bg-[#23BE0A29] rounded-lg text-[#23BE0A]">
+          <p className="p-2 px-4 bg-[#23BE0A0D] rounded-lg text-[#23BE0A]">
             #{tags[1]}
           </p>
         </div>

@@ -1,7 +1,13 @@
+import { getData } from "../../utilities/localStorage";
+import BookListCard from "../bookListCard/BookListCard";
+
 const WishList = () => {
+  const wishlist = getData("wishlist");
   return (
     <div>
-      <h1>This is wishlist</h1>
+      {wishlist.map((book) => (
+        <BookListCard key={book.id} book={book} />
+      ))}
     </div>
   );
 };

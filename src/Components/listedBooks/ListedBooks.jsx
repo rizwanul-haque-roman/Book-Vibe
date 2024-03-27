@@ -1,3 +1,6 @@
+import ReadBooks from "../readBooks/ReadBooks";
+import WishList from "../wishList/WishList";
+
 const ListedBooks = () => {
   return (
     <div className="container mx-auto">
@@ -5,9 +8,17 @@ const ListedBooks = () => {
         Explored Books
       </h1>
       <div className="text-center my-11">
-        <button className="btn bg-[#23BE0A] font-semibold text-lg work-sans text-white">
-          Sort
-        </button>
+        <select
+          name=""
+          id=""
+          defaultChecked="sort"
+          className="p-4 border rounded-lg bg-[#23BE0A] text-white text-lg font-medium work-sans"
+        >
+          <option value="sort">Sort By</option>
+          <option value="rating">Rating</option>
+          <option value="pages">Number of pages</option>
+          <option value="year">Published Year</option>
+        </select>
       </div>
       <div role="tablist" className="tabs tabs-lifted">
         <input
@@ -16,13 +27,13 @@ const ListedBooks = () => {
           role="tab"
           className="tab text-lg work-sans"
           aria-label="Read Books"
-          checked
+          defaultChecked
         />
         <div
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 border-b-0 border-x-0"
         >
-          Tab content 1
+          <ReadBooks />
         </div>
 
         <input
@@ -36,7 +47,7 @@ const ListedBooks = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 border-b-0 border-x-0"
         >
-          Tab content 2
+          <WishList />
         </div>
       </div>
     </div>
