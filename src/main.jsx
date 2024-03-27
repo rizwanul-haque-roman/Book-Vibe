@@ -11,6 +11,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ErrorPage from "./Components/errorPage/ErrorPage";
 import Request from "./Components/request/Request";
+import Featured from "./Components/featured/Featured";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/request",
         element: <Request />,
+      },
+      {
+        path: "/featured",
+        element: <Featured />,
       },
       {
         path: "/details",

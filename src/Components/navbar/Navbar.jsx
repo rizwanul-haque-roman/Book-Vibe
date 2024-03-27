@@ -41,6 +41,18 @@ const Navbar = () => {
       </li>
       <li className="text-black text-lg">
         <NavLink
+          to="/featured"
+          className={({ isActive }) =>
+            isActive
+              ? "btn btn-outline text-[#23BE0A] lg:hover:bg-[#23BE0A] lg:hover:border-[#23BE0A] text-lg"
+              : ""
+          }
+        >
+          Featured Book
+        </NavLink>
+      </li>
+      <li className="text-black text-lg">
+        <NavLink
           to="/request"
           className={({ isActive }) =>
             isActive
@@ -48,7 +60,7 @@ const Navbar = () => {
               : ""
           }
         >
-          Request Book
+          Request a Book
         </NavLink>
       </li>
     </>
