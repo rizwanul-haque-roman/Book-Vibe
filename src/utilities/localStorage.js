@@ -32,4 +32,20 @@ const setWishlist = (obj) => {
   localStorage.setItem("wishlist", JSON.stringify(newWishlist));
 };
 
-export { setData, getData, checkExist, setWishlist };
+// descending by rating: newItems.sort((a, b) => a.rating < b.rating ? 1 : a.rating > b.rating ? -1 : 0)
+
+const sortByRating = () => {
+  const dataRead = getData("read");
+  const dataWishlist = getData("wishlist");
+  dataRead.sort((a, b) =>
+    a.rating < b.rating ? 1 : a.rating > b.rating ? -1 : 0
+  );
+  dataWishlist.sort((a, b) =>
+    a.rating < b.rating ? 1 : a.rating > b.rating ? -1 : 0
+  );
+  localStorage.setItem("wishlist", JSON.stringify(dataRead));
+  localStorage.setItem("wishlist", JSON.stringify(dataWishlist));
+  window.location.reload();
+};
+
+export { setData, getData, checkExist, setWishlist, sortByRating };

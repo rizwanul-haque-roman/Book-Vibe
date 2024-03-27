@@ -9,11 +9,14 @@ import PagesToRead from "./Components/pagesToRead/PagesToRead";
 import BookDetails from "./Components/bookDetails/BookDetails";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ErrorPage from "./Components/errorPage/ErrorPage";
+import Request from "./Components/request/Request";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/pages-to-read",
         element: <PagesToRead />,
+      },
+      {
+        path: "/request",
+        element: <Request />,
       },
       {
         path: "/details",

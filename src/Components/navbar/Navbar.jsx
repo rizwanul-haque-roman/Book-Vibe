@@ -39,6 +39,18 @@ const Navbar = () => {
           Pages to Read
         </NavLink>
       </li>
+      <li className="text-black text-lg">
+        <NavLink
+          to="/request"
+          className={({ isActive }) =>
+            isActive
+              ? "btn btn-outline text-[#23BE0A] lg:hover:bg-[#23BE0A] lg:hover:border-[#23BE0A] text-lg"
+              : ""
+          }
+        >
+          Request Book
+        </NavLink>
+      </li>
     </>
   );
 
@@ -70,10 +82,10 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className=" text-3xl font-bold">Book Vibe</a>
+          <a className="text-3xl font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 flex gap-8 items-center">
+          <ul className="menu menu-horizontal px-1 flex gap-4 items-center">
             {links}
           </ul>
         </div>
