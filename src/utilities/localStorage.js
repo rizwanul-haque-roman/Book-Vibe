@@ -7,17 +7,29 @@ const getData = (key) => {
   return [];
 };
 
-const setData = (obj, key) => {
+const checkExist = (obj, key) => {
   const { id } = obj;
-
   const storedData = getData(key);
   const exits = storedData.find((elemId) => elemId.id === id);
   if (!exits) {
-    storedData.push(obj);
-    localStorage.setItem(key, JSON.stringify(storedData));
     return false;
   }
   return true;
 };
 
-export { setData, getData };
+const setData = (obj, key) => {
+  const exists = checkExist(obj, key);
+  if (!exists) {
+    const storedData = getData(key);
+    storedData.push(obj);
+    localStorage.setItem(key, JSON.stringify(storedData));
+  }
+};
+
+const setWishlist = (obj) => {
+  const wishlist = getData("wishlist");
+  const newWishlist = wishlist.filter((item) => item.id !== obj.id);
+  localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+};
+
+export { setData, getData, checkExist, setWishlist };

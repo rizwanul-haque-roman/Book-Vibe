@@ -1,13 +1,18 @@
 import { useContext } from "react";
 import { BookContext } from "../../utilities/context";
 import { toast } from "react-toastify";
-import { setData } from "../../utilities/localStorage";
+import { setData, setWishlist } from "../../utilities/localStorage";
+import { checkExist } from "../../utilities/localStorage";
 
 const BookDetails = () => {
   const { book } = useContext(BookContext);
   const handleRead = () => {
-    setData(book, "wishlist");
-    const exist = setData(book, "read");
+    // setData(book, "wishlist");
+    const exist = checkExist(book, "read");
+    if (!exist) {
+      setData(book, "read");
+      setWishlist(book);
+    }
     exist === false
       ? toast.success("Book added to Read successfully", {
           position: "top-right",
@@ -31,7 +36,10 @@ const BookDetails = () => {
         });
   };
   const handleWishlist = () => {
-    const exist = setData(book, "wishlist");
+    const exist = checkExist(book, "read");
+    if (!exist) {
+      setData(book, "wishlist");
+    }
     exist === false
       ? toast.success("Book added to wishlist successfully", {
           position: "top-right",
