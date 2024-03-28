@@ -43,9 +43,49 @@ const sortByRating = () => {
   dataWishlist.sort((a, b) =>
     a.rating < b.rating ? 1 : a.rating > b.rating ? -1 : 0
   );
-  localStorage.setItem("wishlist", JSON.stringify(dataRead));
+  localStorage.setItem("read", JSON.stringify(dataRead));
+  localStorage.setItem("wishlist", JSON.stringify(dataWishlist));
+  window.location.reload();
+};
+const sortByPages = () => {
+  const dataRead = getData("read");
+  const dataWishlist = getData("wishlist");
+  dataRead.sort((a, b) => (a.pages < b.pages ? 1 : a.pages > b.pages ? -1 : 0));
+  dataWishlist.sort((a, b) =>
+    a.pages < b.pages ? 1 : a.pages > b.pages ? -1 : 0
+  );
+  localStorage.setItem("read", JSON.stringify(dataRead));
+  localStorage.setItem("wishlist", JSON.stringify(dataWishlist));
+  window.location.reload();
+};
+const sortByYear = () => {
+  const dataRead = getData("read");
+  const dataWishlist = getData("wishlist");
+  dataRead.sort((a, b) =>
+    a.yearOfPublishing < b.yearOfPublishing
+      ? 1
+      : a.yearOfPublishing > b.yearOfPublishing
+      ? -1
+      : 0
+  );
+  dataWishlist.sort((a, b) =>
+    a.yearOfPublishing < b.yearOfPublishing
+      ? 1
+      : a.yearOfPublishing > b.yearOfPublishing
+      ? -1
+      : 0
+  );
+  localStorage.setItem("read", JSON.stringify(dataRead));
   localStorage.setItem("wishlist", JSON.stringify(dataWishlist));
   window.location.reload();
 };
 
-export { setData, getData, checkExist, setWishlist, sortByRating };
+export {
+  setData,
+  getData,
+  checkExist,
+  setWishlist,
+  sortByRating,
+  sortByPages,
+  sortByYear,
+};
