@@ -10,10 +10,10 @@ const Books = () => {
       .then((data) => setBooks(data));
   }, []);
 
-  //   console.log(books);
+  console.log(books);
   return (
     <div className="my-24">
-      <h2 className=" playfair text-black text-5xl font-bold text-center my-10">
+      <h2 className=" playfair text-black text-4xl lg:text-5xl font-bold text-center my-10">
         Get Lost in a World of Books
       </h2>
       <div className="grid lg:grid-cols-3 gap-6">

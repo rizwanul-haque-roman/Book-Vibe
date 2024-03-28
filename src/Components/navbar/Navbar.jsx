@@ -8,7 +8,7 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "btn btn-outline text-[#23BE0A] lg:hover:bg-[#23BE0A] lg:hover:border-[#23BE0A] text-lg"
+              ? "btn btn-outline text-[#23BE0A] lg:hover:bg-[#23BE0A] lg:hover:border-[#23BE0A] lg:text-lg"
               : ""
           }
         >
@@ -94,7 +94,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="text-3xl font-bold">Book Vibe</a>
+          <a className="text-2xl lg:text-3xl font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 flex gap-4 items-center">
@@ -102,8 +102,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-3">
-          <a className="btn bg-[#23BE0A] text-white text-lg">Sign in</a>
-          <a className="btn bg-[#59C6D2] text-white text-lg">Sign Up</a>
+          <a className="btn btn-sm lg:btn-md bg-[#23BE0A] text-white text-lg">
+            Sign in
+          </a>
+          <a className="btn btn-sm lg:btn-md bg-[#59C6D2] text-white text-lg">
+            Sign Up
+          </a>
         </div>
       </div>
     </div>

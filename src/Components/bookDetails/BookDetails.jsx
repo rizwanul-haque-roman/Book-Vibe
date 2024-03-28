@@ -1,11 +1,15 @@
-import { useContext } from "react";
-import { BookContext } from "../../utilities/context";
+import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { checkExist, setData, setWishlist } from "../../utilities/localStorage";
 import { toast } from "react-toastify";
-import { setData, setWishlist } from "../../utilities/localStorage";
-import { checkExist } from "../../utilities/localStorage";
 
 const BookDetails = () => {
-  const { book } = useContext(BookContext);
+  const books = useLoaderData();
+  const { id } = useParams();
+  console.log(id);
+  const item = books.filter((item) => item.id == id);
+  const book = item[0];
+  console.log(book);
   const handleRead = () => {
     // setData(book, "wishlist");
     const exist = checkExist(book, "read");
@@ -76,9 +80,9 @@ const BookDetails = () => {
   } = book;
 
   return (
-    <div className="grid grid-cols-2 container mx-auto gap-12 space-y-6">
-      <div className="flex justify-center items-center bg-[#1313130C] rounded-2xl">
-        <img src={image} alt="" />
+    <div className="grid lg:grid-cols-2 container mx-auto w-11/12 lg:w-full gap-12 space-y-6">
+      <div className="flex justify-center items-center bg-[#F1F5F9] rounded-2xl">
+        <img src={image} alt="" className="w-1/2 lg:w-auto py-16 lg:py-0" />
       </div>
       <div>
         <h2 className="playfair text-black text-4xl font-bold pb-3">{name}</h2>

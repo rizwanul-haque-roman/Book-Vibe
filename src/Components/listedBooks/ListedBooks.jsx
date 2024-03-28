@@ -4,8 +4,8 @@ import WishList from "../wishList/WishList";
 
 const ListedBooks = () => {
   return (
-    <div className="container mx-auto">
-      <h1 className="work-sans text-black text-5xl font-bold text-center py-10 bg-base-200 rounded-2xl">
+    <div className="container mx-auto w-11/12 lg:w-auto">
+      <h1 className="work-sans text-black text-4xl lg:text-5xl font-bold text-center py-10 bg-[#F1F5F9] rounded-2xl">
         Explored Books
       </h1>
       <div className="text-center my-11">
@@ -15,7 +15,9 @@ const ListedBooks = () => {
           defaultChecked="sort"
           className="p-4 border rounded-lg bg-[#23BE0A] text-white text-lg font-medium work-sans"
         >
-          <option value="sort">Sort By</option>
+          <option value="sort" className="disabled" selected>
+            Sort By
+          </option>
           <option value="rating">rating</option>
           <option value="pages">Number of pages</option>
           <option value="year">Published Year</option>
@@ -39,7 +41,7 @@ const ListedBooks = () => {
           name="my_tabs_2"
           role="tab"
           className="tab text-lg work-sans"
-          aria-label="Read Books"
+          aria-label="Read"
           defaultChecked
         />
         <div
@@ -54,7 +56,7 @@ const ListedBooks = () => {
           name="my_tabs_2"
           role="tab"
           className="tab text-lg work-sans"
-          aria-label="Wishlisted Books"
+          aria-label="Wishlist"
         />
         <div
           role="tabpanel"

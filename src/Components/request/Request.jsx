@@ -6,8 +6,8 @@ import bg from "../../assets/bookRequest.jpg";
 
 const Request = () => {
   return (
-    <div className="container mx-auto">
-      <h1 className="playfair text-black text-5xl font-bold text-center py-10 bg-base-200 rounded-2xl">
+    <div className="container mx-auto w-11/12 lg:w-auto">
+      <h1 className="playfair text-black text-4xl lg:text-5xl font-bold text-center py-10 bg-[#F1F5F9] rounded-2xl">
         Have any book in mind? let us know.
       </h1>
       <div
@@ -20,7 +20,7 @@ const Request = () => {
           <h3 className="playfair text-2xl pb-4 text-white text-center ">
             Submit your request here :
           </h3>
-          <form className="grid gap-4 w-1/5">
+          <form className="grid gap-4 lg:w-1/5">
             <label className="flex items-center p-3 border-2 border-[#23BE0A] rounded-lg bg-white">
               <CiUser className="text-2xl mr-2" />
               <input

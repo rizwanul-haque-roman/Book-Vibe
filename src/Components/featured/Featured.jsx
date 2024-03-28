@@ -2,14 +2,14 @@ import book from "../../assets/BlackHouse.jpg";
 
 const Featured = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto w-11/12 lg:w-auto">
       <h1 className="playfair text-black text-5xl font-bold text-center mt-8 mb-4 rounded-2xl">
-        Coming Soon.
+        Coming Soon to Our Website.
       </h1>
       <p className="work-sans font-normal text-lg text-center">
         A chilling small-town mystery with a web of secrets
       </p>
-      <div className="grid grid-cols-3 justify-center items-center">
+      <div className="grid lg:grid-cols-3 justify-center items-center">
         <div>
           <h1 className="playfair text-black text-5xl font-bold text-center mt-8 mb-4 rounded-2xl">
             Blackhouse
@@ -17,7 +17,7 @@ const Featured = () => {
           <p className="work-sans font-medium text-[#131313CC] text-center mb-6">
             By <span>Matthew Day Jackson</span>
           </p>
-          <p className="playfair">
+          <p className="playfair leading-[30px]">
             A shocking murder shatters the peace of a small town. Detective
             Irina Petrova arrives to find a web of secrets and suspicious
             characters. Everyone has a motive, and the investigation takes a
