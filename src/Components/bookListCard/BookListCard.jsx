@@ -1,13 +1,10 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { BookContext } from "../../utilities/context";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { HiOutlineUsers } from "react-icons/hi2";
 import { HiOutlineDocumentChartBar } from "react-icons/hi2";
 
 const BookListCard = ({ book }) => {
-  const { setBook } = useContext(BookContext);
   const {
     id,
     image,
@@ -62,10 +59,7 @@ const BookListCard = ({ book }) => {
             Rating: {rating}
           </p>
           <NavLink to={`/details/${id}`}>
-            <button
-              onClick={() => setBook(book)}
-              className="w-full lg:w-auto py-2 px-4 bg-[#23BE0A] rounded-3xl text-white"
-            >
+            <button className="w-full lg:w-auto py-2 px-4 bg-[#23BE0A] rounded-3xl text-white">
               View Details
             </button>
           </NavLink>

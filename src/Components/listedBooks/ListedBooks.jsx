@@ -1,6 +1,6 @@
 import ReadBooks from "../readBooks/ReadBooks";
 import WishList from "../wishList/WishList";
-// import { sortByRating } from "../../utilities/localStorage";
+import { sortByRating } from "../../utilities/localStorage";
 
 const ListedBooks = () => {
   return (
@@ -9,7 +9,7 @@ const ListedBooks = () => {
         Explored Books
       </h1>
       <div className="text-center my-11">
-        <select
+        {/* <select
           name=""
           id=""
           defaultChecked="sort"
@@ -21,18 +21,18 @@ const ListedBooks = () => {
           <option value="rating">rating</option>
           <option value="pages">Number of pages</option>
           <option value="year">Published Year</option>
-        </select>
-        {/* <details className="dropdown">
+        </select> */}
+        <details className="dropdown">
           <summary className="m-1 btn">open or close</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
-              <a>Item 1</a>
+              <button onClick={sortByRating}>Rating</button>>
             </li>
             <li>
               <a>Item 2</a>
             </li>
           </ul>
-        </details> */}
+        </details>
         {/* <button onClick={sortByRating}>Rating</button> */}
       </div>
       <div role="tablist" className="tabs tabs-lifted">
