@@ -80,7 +80,7 @@ const BookDetails = () => {
   } = book;
 
   return (
-    <div className="grid lg:grid-cols-2 container mx-auto w-11/12 lg:w-full gap-12 space-y-6">
+    <div className="grid lg:grid-cols-2 container mx-auto w-11/12 lg:w-full gap-12 space-y-6 my-10">
       <div className="flex justify-center items-center bg-[#F1F5F9] rounded-2xl">
         <img src={image} alt="" className="w-1/2 lg:w-auto py-16 lg:py-0" />
       </div>
